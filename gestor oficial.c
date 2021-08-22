@@ -81,7 +81,7 @@ menu();
         fwrite(&c,sizeof(c),1,f);
 
       fflush(stdin);
-        printf("\n añadido exitosamente !!");
+        printf("\n aÃ±adido exitosamente !!");
 
 fclose(f);
 
@@ -271,7 +271,7 @@ void modificar()
 	menu();
 
 }
-void got(char *name)
+void got(char *nombre)
 {
 
    int i=0,j;
@@ -281,7 +281,7 @@ void got(char *name)
         c=getch();
                 if(c!=8&&c!=13)
                 {
-                    *(name+i)=c;
+                    *(nombre+i)=c;
                         putch(c);
                         i++;
                 }
@@ -291,16 +291,15 @@ void got(char *name)
                     {
                         i--;
                     }
-                   // printf("h");
                     system("cls");
                     for(j=0;j<i;j++)
                     {
-                        ch=*(name+j);
+                        ch=*(nombre+j);
                         putch(ch);
 
                     }
 
                 }
     }while(c!=13);
-      *(name+i)='\0';
+      *(nombre+i)='\0';
 }
