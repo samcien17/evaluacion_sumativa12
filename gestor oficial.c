@@ -11,7 +11,7 @@ struct contacto
 
     };
 void menu();
-void got();
+void tr();
 void inicio();
 void atras();
 void anadir();
@@ -73,11 +73,11 @@ menu();
         struct contacto c;
         f=fopen("gestor","ab+");
         printf("\nintrodusca nombre: ");
-        got(c.nom);
+        tr(c.nom);
         printf("\nintrodusca e-Mail: ");
-         got(c.correo);
+         tr(c.correo);
         printf("\n intrudusca numero : ");
-        got(c.num);
+        tr(c.num);
         fwrite(&c,sizeof(c),1,f);
 
       fflush(stdin);
@@ -130,7 +130,7 @@ if(f==NULL)
 
 }
 printf("\n introdusca el nombre de la persona \n");
-got(nom);
+tr(nom);
 while(fread(&c,sizeof(c),1,f)==1)
 {
     if(strcmp(c.nom,nom)==0)
@@ -174,7 +174,7 @@ void borrar()
 
 
 		printf("\n introdusca el nombre del contacto: ");
-		got(nom);
+		tr(nom);
 
 		fflush(stdin);
 		while(fread(&c,sizeof(c),1,f)==1)
@@ -227,7 +227,7 @@ void modificar()
 	{
 	    system("cls");
 		printf("introdusca el nombre del contacto a modificar:\n");
-            got(nom);
+            tr(nom);
             while(fread(&c,sizeof(c),1,f)==1)
             {
                 if(strcmp(nom,c.nom)==0)
@@ -236,11 +236,11 @@ void modificar()
 
 
                     printf("\nintrodusca nombre: ");
-                    got(s.nom);
+                    tr(s.nom);
                     printf("\nintrodusca e-Mail: ");
-                    got(s.correo);
+                    tr(s.correo);
                     printf("\n intrudusca numero : ");
-                    got(s.num);
+                    tr(s.num);
                     fseek(f,-sizeof(c),SEEK_CUR);
                     fwrite(&s,sizeof(c),1,f);
                     ban=1;
@@ -271,7 +271,7 @@ void modificar()
 	menu();
 
 }
-void got(char *nombre)
+void tr(char *nombre)
 {
 
    int i=0,j;
